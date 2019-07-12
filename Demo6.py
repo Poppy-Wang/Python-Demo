@@ -521,8 +521,143 @@ python属性访问器 / 属性修改器 / 属性删除器/property
 # r=point2.calculate_distance(point2)
 # print(r)
 '''
-面向对象的三大特征：封装，继承，多态
-1.封装：
-2.继承：
-3.多态：
+面向对象-封装
+1.封装是是面向的特点之一,同时这也是最重要的,对象可以没有继承,可以没有多态,但是不能没有封装,没有封装的对象就不是一个合格的对象.
+2.封装内分为属性和方法,初次接触的同学可能不太习惯,但是,不要紧.
+3.你可以把属性想象成一个人的名字,年龄等信息,通常都是名词性质的,而方法想象成是一种行为,比如一个人吃饭,睡觉等,通常是具有动词性质的.
+4.而属性和方法又有公有和私有的划分，以__开头是私有
+5.把同一类的函数和变量放到一个类中去的过程叫做封装
 '''
+# class Cat:
+#     def __init__(self,name,color):
+#         self.name = name
+#         self.color = color
+#
+#     def run(self):
+#         print("%s在跑，颜色是%s"%(self.name, self.color))
+#
+# c=Cat('emma', "gray")
+# c.run()
+
+# class stu():
+#      def __init__(self, name, age, score):
+#          self.__name = name
+#          self.age = age
+#          self.__score = score
+# xiaoming = stu("xiaoming", 15, 90)
+# print(xiaoming.age)
+# print(xiaoming.name)
+
+
+# class Person:
+#     # 写构造函数  init(初始化)
+#     # self.变量名----创建变量
+#     # self--自己(谁调用self就代表谁)
+#     # Person()---构造函数
+#     def __init__(self):
+#         self.name = None
+#         self.age = None
+#         self.sex = None
+#         print('我出生了！')
+#
+#     # 普通函数
+#     def eat(self):
+#         name = '李四'
+#         print(name, '吃饭')
+# 创建对象（实例化对象）
+# 创建对象默认调用构造函数
+# p1 = Person()
+# p1.name = '张三'
+# p1.age = 22
+# p1.sex = '男'
+# p1.eat()
+# print(p1.name, p1.sex, p1.age)
+
+
+'''
+面向对象—继承
+1.子承父类，就相当于把一些公共方法封装成一个类，当需要用到这个类里面的功能，就继承该类就可以使用里面的功能了。子类继承了父类也可以使用父类的父类的功能。
+私用方法或属性不能被继承。
+2.重写：子类继承了父类时，如果你觉得父类的方法不是你想要的方法，
+你可以在自己的类里面写一个和父类名字一模一样的方法名，把你想要的功能从新写入。既是重。
+因为程序是先找子类有没有该方法，如果没有则到父类去找，如果有的话直接使用子类的方法。
+3.多继承：一个子类继承多个父类
+'''
+# 创建a类继承object类(所有的类默认都是继承object类)
+# class A(object):
+#
+#     def a_func(self):
+#         print('这是a类的功能')
+#
+# # 创建b类，继承a类
+# class B(A):
+#
+#     def b_func(self):
+#         print('这是b类的功能')
+# # 实例化a类（创建x对象）
+# x = A()
+# x.a_func()
+#
+# # 实例化b类（创建y对象）
+# y = B()
+# y.a_func()  # 调用父类的功能
+# y.b_func()
+
+#重写
+# 创建a类继承object类(所有的类默认都是继承object类)
+# class A(object):
+#
+#     def a_func(self):
+#         print('这是a类的功能')
+#
+# # 创建b类，继承a类
+# class B(A):
+#
+#     def b_func(self):
+#         print('这是b类的功能')
+#
+#     # 重写父类方法
+#     def a_func(self):
+#         print('这是重写a类后的功能')
+
+    # 子类重写了父类的功能，但还是想用父类的功能
+    # def b_func2(self):
+    #     A.a_func(self)    # 可以通过:父类名.被重写的方法名(self):调用
+    #     A().a_func()      # 第二种调用方式
+    #     super().a_func()  # 第三种调用方式
+
+
+# 实例化a类（创建x对象）
+# x = A()
+# x.a_func()
+#
+# # 实例化b类（创建y对象）
+# y = B()
+# y.a_func()  # 此时调用的是被重写后的方法
+# y.b_func()
+# y.b_func2()
+
+class A(object):
+
+    def a_func(self):
+        print('这是a类的功能')
+
+# 创建b类
+class B(object):
+
+    def b_func(self):
+        print('这是b类的功能')
+
+# 创建c类型 继承a类和b类
+class C(A, B):
+
+    def c_func(self):
+        print('这是c类的功能')
+
+
+# 创建z对象
+z = C()
+z.a_func()
+z.b_func()
+z.c_func()
+#多继承类的方法调用顺序：首先，先找他自己的方法，如果没有则找第一个父类的方法，再找第二个父类的方法，直到object类
