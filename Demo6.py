@@ -637,27 +637,92 @@ python属性访问器 / 属性修改器 / 属性删除器/property
 # y.b_func()
 # y.b_func2()
 
-class A(object):
-
-    def a_func(self):
-        print('这是a类的功能')
-
-# 创建b类
-class B(object):
-
-    def b_func(self):
-        print('这是b类的功能')
-
-# 创建c类型 继承a类和b类
-class C(A, B):
-
-    def c_func(self):
-        print('这是c类的功能')
-
-
+# class A(object):
+#
+#     def a_func(self):
+#         print('这是a类的功能')
+#
+# # 创建b类
+# class B(object):
+#
+#     def b_func(self):
+#         print('这是b类的功能')
+#
+# # 创建c类型 继承a类和b类
+# class C(A, B):
+#
+#     def c_func(self):
+#         print('这是c类的功能')
 # 创建z对象
-z = C()
-z.a_func()
-z.b_func()
-z.c_func()
+# z = C()
+# z.a_func()
+# z.b_func()
+# z.c_func()
 #多继承类的方法调用顺序：首先，先找他自己的方法，如果没有则找第一个父类的方法，再找第二个父类的方法，直到object类
+
+'''
+面向对象—多态
+1.作用：一个接口，多种实现
+2.目的：接口的重（chong）用
+3.多态的最基本的实现就是通过继承来实现的
+'''
+# class People(object):
+#     def __init__(self, name):
+#         self.name = name
+#
+# class Man(People):
+#     def walk(self):
+#         print('%s is walking' % self.name)
+#
+# class Woman(People):
+#     def walk(self):
+#         print('%s is walking' % self.name)
+#
+# man1 = Man('xiaoming')
+# man1.walk()
+# man2 = Woman('ruhua')
+# man2.walk()
+#简单的三个类，两个子类都继承了父类People，父类中有构造函数初始化name变量，两个子类中都有一个walk函数，实例化了两个对象man1和man2，
+# 分别调用了walk函数，实现了输出这两句话
+#但是我们能不能写一个函数，当作一个接口，传入对象就可以执行walk函数，而不是用这个对象来调用walk函数呢？
+#继承是多态的前提
+#创建父类
+class People(object):
+    def __init__(self, name):
+        self.name = name
+    @staticmethod#静态方法
+    def people_walk(obj):
+        obj.walk()
+
+class Man(People):
+    def walk(self):
+        print('%s is walking' % self.name)
+
+class Woman(People):
+    def walk(self):
+        print('%s is walking' % self.name)
+#实例化
+man1 = Man('xiaoming')
+#man1.walk()
+man2 = Woman('ruhua')
+#man2.walk()
+People.people_walk(man1)
+People.people_walk(man2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
