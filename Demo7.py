@@ -133,9 +133,61 @@ python异常处理
 
 '''
 数据持久化:
-1.python操作csv文件：
-2.csv模块的应用：
-3.json数据格式：
-4.json模块的应用
+1.python操作csv文件：python3.x集成了对csv文件的操作，直接引入包即可,import csv
+    a.读取csv文件
+    import csv
+    #打开文件
+    csvfile = open('xiaoqiang.csv',newline='')#如果打开csv文件出现空行的情况，那么需要添加一个参数 newline=”
+    #获得对象
+    csvReader = csv.reader(csvfile)读取csv时需要使用reader，并传如一个文件对象reader返回的是一个可迭代的对象，需要使用for循环遍历
+    #读取内容并打印
+    for content in csvReader:
+      print(content)
+    #关闭。这个经常有小伙伴忘了，今天在群里就有人遇到这个问题了
+    csvfile.close()
+    b.写入文件(调用writer对象的前提是：需要传入一个文件对象，然后才能在这个文件对象的基础上
+    调用csv的写入方法)
+    import csv
+    #打开文件
+    csvfile = open('xiaoqiang.csv', 'w',newline='')#创建csv文件
+    #获得对象
+    writer = csv.writer(csvfile)
+    #写入一行数据
+    writer.writerow(('名称', '网址'))#写入列的名称
+    #定义要写入多行数据的内容
+    rows= [
+    
+     ('小强的博客', 'http://blog.51cto.com/xqtesting'),
+    
+     ('小强的视频', 'http://edu.51cto.com/lecturer/4626073.html')
+     ]
+    #写入多行
+    writer.writerows(rows)
+    #关闭
+    csvfile.close()
+2.json数据格式和应用：
+a.JSON (JavaScript Object Notation) 是一种轻量级的数据交换格式
+b.json.dumps(): 将 Python 对象编码成 JSON 字符串
+c.json.loads(): 将已编码的 JSON 字符串解码为 Python 对象
+
 
 '''
+import json
+import math
+# Python 字典类型转换为 JSON 对象
+data = [ { 'a' : 1, 'b' : 2, 'c' : 3, 'd' : 4, 'e' : 5 } ]
+json = json.dumps(data)
+print(json)
+
+#Python 如何解码 JSON 对象
+jsonData = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
+text = json.loads(jsonData)
+print(text)
+
+#如果你要处理的是文件而不是字符串，你可以使用 json.dump() 和 json.load() 来编码和解码JSON数据
+# 写入 JSON 数据
+with open('data.json', 'w') as f:
+    pop_data=json.dump(data, f)
+# 读取数据
+with open('data.json', 'r') as f:
+    data = json.load(f)
