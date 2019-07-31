@@ -51,12 +51,20 @@ from time import sleep
 driver=webdriver.Chrome()
 driver.get('https://www.xdclass.net')
 driver.maximize_window()
+print(driver.current_window_handle)
 print(driver.title)
 sleep(3)
-# driver.add_cookie({'name':'token','value':'xdclasseyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ4ZGNsYXNzIiwicm9sZXMiOiIxIiwiaW1nIjoiaHR0cHM6Ly94ZC12aWRlby1wYy1pbWcub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tL3hkY2xhc3NfcHJvL2RlZmF1bHQvaGVhZF9pbWcvMTkuanBlZyIsImlkIjoxMTcwOSwibmFtZSI6IuWwj-Wwj-WkjyIsImlhdCI6MTU2NDQ5Mzc2NiwiZXhwIjoxNTY1MDk4NTY2fQ.OyFvEwU5c8XxMcHqTEGcWxUhj5w5FM7LJIcURIV0mwk'})
-# video_ele=driver.find_element_by_css_selector('#app > div > div.hot > div > div.content > a:nth-child(1) > div > img')
-# video_ele.click()
-# sleep(2)
+driver.add_cookie({'name':'token','value':'xdclasseyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ4ZGNsYXNzIiwicm9sZXMiOiIxIiwiaW1nIjoiaHR0cHM6Ly94ZC12aWRlby1wYy1pbWcub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tL3hkY2xhc3NfcHJvL2RlZmF1bHQvaGVhZF9pbWcvMTkuanBlZyIsImlkIjoxMTcwOSwibmFtZSI6IuWwj-Wwj-WkjyIsImlhdCI6MTU2NDQ5Mzc2NiwiZXhwIjoxNTY1MDk4NTY2fQ.OyFvEwU5c8XxMcHqTEGcWxUhj5w5FM7LJIcURIV0mwk'})
+video_ele=driver.find_element_by_css_selector('#app > div > div.hot > div > div.content > a:nth-child(1) > div > img')
+video_ele.click()
+sleep(2)
+windows=driver.window_handles
+print(windows)
+print(windows[1])
+driver.switch_to.window(windows[1])
+print(driver.current_window_handle)
+buy=driver.find_element_by_css_selector('#app > div > div.details_container.clearfix > div.body.w > div.r_container.f_r > div.gostudy > div.buy_tolearn > a')
+buy.click()
 # buy=driver.find_element_by_css_selector('#app > div > div.details_container.clearfix > div.body.w > div.r_container.f_r > div.gostudy > div.buy_tolearn > a')
 # buy.click()
 
@@ -65,7 +73,7 @@ sleep(3)
 使用webdriver自动截图
 driver.get_screenshot_as_file()括号里写路径
 '''
-driver.get_screenshot_as_file('C:\\Users\\Administrator\\Desktop\\Sublime\\xd.png')
+# driver.get_screenshot_as_file('C:\\Users\\Administrator\\Desktop\\Sublime\\xd.png')
 
 
 
