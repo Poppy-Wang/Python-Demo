@@ -103,7 +103,7 @@ class XdclassTestCase(unittest.TestCase):
         self.assertEqual(self.name,'小D课堂',msg='名字不对')
     def test_two(self):
         print('test two')
-        self.assertFalse('XD'.isupper(),msg='不是大写')
+        self.assertFalse('xd'.isupper(),msg='不是大写')
     def test_three(self):
         print('test three')
         self.assertEqual(self.age,32)
@@ -119,8 +119,8 @@ if __name__=='__main__':
     fp=open('C:\\Users\\Administrator\\Desktop\\report.html','wb')
     #以二进制格式打开一个文件，只用于写入，如果文件存在则覆盖，不存在则创建
     #stream定义一个测试报告写入的文件
-    HTMLTestRunner.HTMLTestRunner(stream=fp,title='小D课堂测试报告',description='测试用例执行情况')
-    runner=unittest.TextTestRunner()
+    runner=HTMLTestRunner.HTMLTestRunner(stream=fp,title='小D课堂测试报告',description='测试用例执行情况')
+    #runner=unittest.TextTestRunner()
     runner.run(suite)
     fp.close()
     #****ps：如果还是没有生成html报告，可以尝试alt+shift+f10+run运行代码
