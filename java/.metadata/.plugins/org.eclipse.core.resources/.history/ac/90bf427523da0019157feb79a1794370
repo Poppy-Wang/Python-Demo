@@ -1,0 +1,18 @@
+package lesson1;
+
+public class demo2 {
+	public static void main(String[] args) {
+	//定义boolean类型变量,只能true或者false
+	boolean aa=true;
+	boolean bb=false;
+	//整型:byte类型最大为127
+	byte cc=127;
+	short dd=3;
+	int ee=34;
+	long ff=123;
+	//浮点型：float,double
+	float a=3.14f;
+	double b=3.4;
+	//字符型chart
+}
+}

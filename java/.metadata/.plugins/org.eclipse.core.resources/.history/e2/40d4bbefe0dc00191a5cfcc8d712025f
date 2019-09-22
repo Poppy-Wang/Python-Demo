@@ -1,0 +1,24 @@
+package lesson1;
+
+public class demo3 {
+	public static void main(String[] args) {
+		//运算符分类：算术运算符，关系运算符，逻辑运算符，赋值运算符，其他运算符
+		int a=11;
+		int b=2;
+		int c=4;
+		System.out.println(a+b);
+		System.out.println(a-b);
+		System.out.println(a*b);
+		System.out.println(a/b);
+		System.out.println(a%b);//取余数
+		int aa=a++;
+		int bb=++a;
+		System.out.println(aa);
+		System.out.println(bb);
+		System.out.println((a>b)&(b>c));//当两边都是true时，返回true，只要有一个false则结果返回false
+		System.out.println((a>b)&&(b>c));//具有短路的效果如果第一个表达式为 false，则不再计算第二个表达式
+		System.out.println((a>b)|(b>c));//|”：前后两个操作数都会进行计算。也就是说：“|”不存在短路
+		System.out.println((a>b)||(b>c));//具有短路的效果||表示短路或，当运算符左边的值为true时，右边的表达式不会进行运算
+		System.out.println(!(a>b));
+	}
+}

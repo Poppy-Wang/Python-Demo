@@ -1,0 +1,41 @@
+package lesson1;
+
+public class demo2 {
+	public static void main(String[] args) {
+		//定义boolean类型变量,只能true或者false
+		boolean aa=true;
+		boolean bb=false;
+		//整型:byte类型最大为127
+		byte cc=127;
+		short dd=3;
+		int ee=34;
+		long ff=123;
+		//浮点型：float,double,小数默认会被提升为double类型，所以定义float类型需要加后缀f,float类型占4个字节，
+		//double类型占8个字节，大类型转换成小类型必须要强制转换，此过程需要手动强制转换
+		float a=3.14f;
+		double b=3.4;
+		//字符型char
+		char c='a';
+		//引用类型（一个内存地址，一个位置信息）：数组，类，接口，枚举
+		String name="zhangzhang";
+		int age=23;
+		//System.out.print(name+age);
+		//数组：容量确定，类型确定，定义一个数组的时候必须指定数组的大小和声明数组的类型；一维数组，二维数组
+		//创建一维数组语法：数据类型 [] 数组类型=new 数据类型[size]，int [] myArray=new int[3]
+		//创建一个数组已知数组内元素:int myArray={1,2,3}
+		String [] arr1=new String[5];
+		String [] names={"11","22","33"};
+		System.out.println(names[2]);
+		int [] Array=new int[5];
+		Array[0]=10;
+		Array[1]=20;
+		Array[2]=30;
+		Array[3]=40;
+		Array[4]=50;
+		System.out.println(Array[0]);
+		System.out.println(Array[1]);
+		System.out.println(Array[2]);
+		System.out.println(Array[3]);
+		System.out.println(Array[4]);
+}
+}

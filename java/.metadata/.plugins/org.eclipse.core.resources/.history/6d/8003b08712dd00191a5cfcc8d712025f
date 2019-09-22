@@ -1,0 +1,49 @@
+package lesson1;
+
+public class demo4 {
+	public static void main(String[] args) {
+		/*for ,while 循环
+		for(表达式){
+			循环体
+		}
+		*/
+//		for (int i = 1; i < 10; i++) {
+//			System.out.println(i);//打印每一个变量的值
+//		}
+		//求1-10的和
+//		int result=1+2+3+4+5+6+7+8+9+10;
+//		System.out.println(result);
+		//求1-100的和
+//		int result1=0;
+//		for(int i=1;i<=100;i++){
+//			result1+=i;
+//		}
+//		System.out.println(result1);
+		String [] names={"111","222","333","444","555"};//字符串类型数组
+//		for (int i = 0; i < names.length; i++) {
+//			System.out.println(names[i]);
+//		}
+		//增强for 循环:fore
+//		for(String name:names){//定义name变量接收从names数组中取出来的每一个数据，names 为定义的数组
+//			System.out.println(name);
+//		}
+//		for (String string : names) {//代码提示工具生成变量string
+//			System.out.println(string);
+//		}
+		//循环控制：跳出本次循环---continue;跳出整个循环-----break
+		//当i为3的时候跳过本次循环
+//		for (int i = 0; i <=5; i++) {
+//			if(i==3){
+//				continue;//当i为3的时候跳过3这次循环，继续下一个，即i不为3的时候一直执行输出语句
+//			}
+//			System.out.println(i);
+//		}
+		//当i为3的时候跳出整个循环
+		for (int i = 0; i <=5; i++) {
+			if(i==3){
+				break;//当i为3的时候终止循环不在继续输出语句
+			}
+			System.out.println(names[i]);
+		}
+	}
+}

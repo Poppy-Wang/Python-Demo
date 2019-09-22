@@ -1,0 +1,10 @@
+package lesson1;
+
+public class demo4 {
+	public static void main(String[] args) {
+		//for ,while 循环
+		//for(表达式){
+			循环体
+		//}
+	}
+}

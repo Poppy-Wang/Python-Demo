@@ -1,0 +1,10 @@
+package lesson1;
+
+public class demo2 {
+	public static void main(String[] args) {
+	//定义boolean类型变量,只能true或者false
+	boolean aa=true;
+	boolean bb=false;
+	
+}
+}
