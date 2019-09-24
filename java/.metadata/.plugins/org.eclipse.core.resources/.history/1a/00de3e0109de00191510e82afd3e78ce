@@ -1,0 +1,13 @@
+package lesson1;
+
+public class mobile {
+	public String brand;//品牌
+	public int price;//价格
+	//手机功能
+	public void sendMessage(){
+		System.out.println("你在家吗");
+	}
+	public static void main(String[] args) {
+		
+	}
+}

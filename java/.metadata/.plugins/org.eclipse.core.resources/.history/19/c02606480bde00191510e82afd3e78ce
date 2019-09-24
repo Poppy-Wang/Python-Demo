@@ -1,0 +1,26 @@
+package lesson1;
+
+public class mobile {
+	public String brand;//品牌
+	public int price;//价格
+	//手机功能，非构造函数
+	public void sendMessage(String name){
+		System.out.println(name+"你在家吗");
+	}
+	//构造函数：构造对象的函数，无参或者有参
+	/*无参：修饰符+函数名(){}
+	 * Public member(){}
+	 * 带参数：修饰符+函数名(参数类型 参数名){}
+	 * public member(String username,String password){}
+	 * 
+	 * 注意：不需要显示声明函数返回类型，函数名必须要和类名保持一致
+	 * */
+	//构造函数
+	public mobile(){//无参
+		
+	}
+	public static void main(String[] args) {
+		mobile mm=new mobile();
+		mm.sendMessage("张三");
+	}
+}

@@ -1,0 +1,8 @@
+package lesson1;
+
+public class demo5 {
+	public static void main(String[] args) {
+		//变量和全局变量
+		
+	}
+}

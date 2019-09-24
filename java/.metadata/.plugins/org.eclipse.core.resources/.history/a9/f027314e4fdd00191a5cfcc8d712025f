@@ -1,0 +1,12 @@
+package lesson1;
+
+public class demo5 {
+	public static void main(String[] args) {
+		//局部变量和全局变量(成员变量)：
+		/*局部变量：定义在函数体内
+		 * 定义在函数参数列表里
+		 * 代码块中
+		 * */
+		
+	}
+}

@@ -1,0 +1,28 @@
+package lesson1;
+
+public class demo5 {
+//	{
+//		//代码块
+//		int c=3;
+//		//System.out.println(b);报错
+//	}
+//	public static void main(String[] args) {
+//		//局部变量和全局变量(成员变量)：
+//		/*局部变量：定义在函数体内
+//		 * 定义在函数参数列表里
+//		 * 代码块中
+//		 * */
+//		//int a=1;
+//		//static int a=4;
+//		int b=2;
+//		System.out.println(a);
+//	}
+//	public void test1(){
+//		//System.out.println(a);无法访问局部变量a
+//	}
+	String name="111";
+	int age=12;
+	public static void main(String[] args) {
+		
+	}
+}

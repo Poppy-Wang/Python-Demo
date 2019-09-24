@@ -1,0 +1,9 @@
+package lesson1;
+
+public class mobile {
+	public String brand;//Æ·ÅÆ
+	public int price;//¼Û¸ñ
+	public static void main(String[] args) {
+		
+	}
+}

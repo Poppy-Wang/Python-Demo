@@ -1,0 +1,19 @@
+package lesson1;
+//
+public class Mobilephone {
+	//全局变量也是类的成员变量
+	//品牌
+	public String brand;
+	//产品类型
+	public String generation;
+	//价格
+	public int price;
+	//定义发短信函数,不用返回任何信息
+	public void sendMessage(String name){
+		System.out.println(name+"晚上一起吃饭");//要发送短信给谁必须要传入一个参数姓名
+		System.out.println("此短信通过"+this.brand+this.generation+"手机发出");
+	}
+	public static void main(String[] args) {
+		
+	}
+}
