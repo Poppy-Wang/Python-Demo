@@ -1,5 +1,5 @@
 package lesson2;
-//19
+//
 //父类,定义公有 的方法供子类去继承使用
 //私有的方法和属性子类无法继承，只有父类可以调用
 public class Iphone4s extends Mobile{
